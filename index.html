@@ -281,13 +281,19 @@
         var body = document.body;
         function keyboard(e){
             if(e.keyCode == 65 || e.keyCode == 97){
-                if(modelfile_num != 0){
+                if(modelfile_num == 0){
+                    modelfile_num = 0;
+                }
+                else{
                     modelfile_num -= 1;
                     changemodel();
                 }
             }
             else if(e.keyCode == 68 || e.keyCode == 100){
-                if(modelfile_num != data_json_length){
+                if(modelfile_num == data_json_length){
+                    modelfile_num = data_json_length;
+                }
+                else{
                     modelfile_num += 1;
                     changemodel();
                 }
